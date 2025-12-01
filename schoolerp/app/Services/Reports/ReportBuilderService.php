@@ -4,24 +4,24 @@ namespace App\Services\Reports;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
-use App\Models\Student;
-use App\Models\Department;
-use App\Models\Program;
-use App\Models\Division;
+use App\Models\User\Student;
+use App\Models\Academic\Department;
+use App\Models\Academic\Program;
+use App\Models\Academic\Division;
 use App\Models\Fee\StudentFee;
-use App\Models\Examination\StudentMark;
-use App\Models\Attendance;
+use App\Models\Result\StudentMark;
+use App\Models\Attendance\Attendance;
 
 class ReportBuilderService
 {
     protected array $availableModels = [
-        'students' => Student::class,
-        'departments' => Department::class,
-        'programs' => Program::class,
-        'divisions' => Division::class,
-        'student_fees' => StudentFee::class,
-        'student_marks' => StudentMark::class,
-        'attendance' => Attendance::class,
+        'students' => \App\Models\User\Student::class,
+        'departments' => \App\Models\Academic\Department::class,
+        'programs' => \App\Models\Academic\Program::class,
+        'divisions' => \App\Models\Academic\Division::class,
+        'student_fees' => \App\Models\Fee\StudentFee::class,
+        'student_marks' => \App\Models\Result\StudentMark::class,
+        'attendance' => \App\Models\Attendance\Attendance::class,
     ];
 
     protected array $availableColumns = [

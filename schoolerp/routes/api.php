@@ -24,6 +24,12 @@ Route::middleware(['auth:sanctum'])->group(function () {
     // Department Management
     Route::apiResource('departments', \App\Http\Controllers\Api\Academic\DepartmentController::class);
     
+    // Program Management
+    Route::apiResource('programs', \App\Http\Controllers\Api\Academic\ProgramController::class);
+    
+    // Academic Session Management
+    Route::apiResource('academic-sessions', \App\Http\Controllers\Api\Academic\AcademicSessionController::class);
+    
     // Student Management
     Route::apiResource('students', \App\Http\Controllers\Api\Academic\StudentController::class)
         ->middleware('check.division.capacity');
@@ -43,6 +49,10 @@ Route::middleware(['auth:sanctum'])->group(function () {
     // Division Management
     Route::apiResource('divisions', DivisionController::class);
     Route::get('divisions/{division}/students', [DivisionController::class, 'students']);
+    
+    // Examination Management
+    Route::apiResource('exams', \App\Http\Controllers\Api\Result\ExamController::class);
+    Route::apiResource('examinations', \App\Http\Controllers\Api\Result\ExaminationController::class);
     
     // Fee Management
     Route::post('fees/assign', [\App\Http\Controllers\Api\Fee\FeeController::class, 'assignFees']);

@@ -11,9 +11,9 @@ class DepartmentController extends Controller
 {
     public function index(): JsonResponse
     {
-        $departments = Department::active()
+        $departments = Department::where('is_active', true)
             ->with(['programs' => function($query) {
-                $query->active();
+                $query->where('is_active', true);
             }])
             ->get();
 
