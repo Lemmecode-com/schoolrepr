@@ -29,8 +29,10 @@ jobs:
         tar -czf schoolerp-deploy.tar.gz schoolerp/ student-portal/ README.md INTERN_GUIDE.md
         
     - name: Deploy via SSH (if secrets configured)
-      if: ${{ secrets.DEPLOY_HOST != '' }}
+      if: ${{ env.DEPLOY_HOST != '' }}
       uses: appleboy/ssh-action@v1.0.3
+      env:
+        DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
       with:
         host: ${{ secrets.DEPLOY_HOST }}
         username: ${{ secrets.DEPLOY_USER }}
