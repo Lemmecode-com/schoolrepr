@@ -166,4 +166,4 @@ This project is available for educational institutions. Contact for commercial l
 
 **🎓 Empowering Educational Institutions with Modern Technology**  
 **📧 Ready for deployment and customization**  
-**⭐ Built with ❤️ for the education sector in India**
+**⭐ Built with ❤️ for the education sector in India**# Test deployment Thu Dec  4 13:19:16 UTC 2025
