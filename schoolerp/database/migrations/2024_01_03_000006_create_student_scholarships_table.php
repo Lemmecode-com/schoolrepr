@@ -17,7 +17,14 @@ return new class extends Migration
             $table->boolean('is_active')->default(true);
             $table->timestamps();
 
-            $table->unique(['student_id', 'scholarship_id', 'academic_year']);
+            //$table->unique(['student_id', 'scholarship_id', 'academic_year']);
+
+            $table->unique(
+                ['student_id', 'scholarship_id', 'academic_year'],
+                'stud_schol_unique'
+            );
+
+            
         });
     }
 
